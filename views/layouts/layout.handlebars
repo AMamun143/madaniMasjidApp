@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LoginApp</title>
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="col-md-12">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
+
+                <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="/img/image0.jpg" alt="">
+                <div class="carousel-caption"></div>
+            </div>
+
+            <div class="item" alt="">
+                <img src="/img/image1.jpg">
+                <div class="carousel-caption"></div>
+            </div>
+      
+            <div class="item" alt="">
+                <img src="/img/image2.jpg">
+                <div class="carousel-caption"></div>
+            </div>
+
+            <div class="item" alt="">
+                <img src="/img/image3.jpg">
+                <div class="carousel-caption"></div>
+            </div>
+
+            <div class="item"alt="">
+                <img src="/img/image4.jpg">
+                <div class="carousel-caption"></div>
+            </div>
+
+            <div class="item" alt="">
+                <img src="/img/image5.jpg">
+                <div class="carousel-caption"></div>
+            </div>
+        </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+    </div>
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            {{#if user}}
+              {{!-- <li role="presentation"><a href="/">Dashboard</a></li> --}}
+              <li role="presentation"><a href="/donate">Donate</a></li>
+              <li role="presentation"><a href="/users/logout">Logout</a></li>
+            {{else}}
+              <li role="presentation"><a href="/home">Home</a></li>
+              <li role="presentation"><a href="/school">Weekend school</a></li>
+              <li role="presentation"><a href="/event">Events</a></li>
+              <li role="presentation"><a href="/contact">Contact</a></li>
+              <li role="presentation"><a href="/donate">Donate</a></li>
+              <li role="presentation"><a href="/users/login">Login</a></li>
+              <li role="presentation"><a href="/users/register">Register</a></li>
+            {{/if}}
+          </ul>
+        </nav>
+        {{!-- <h3 class="text-muted">Madani Masjid</h3> --}}
+        <div class="footer-image-container"><img src="/img/logo.jpg" width="200px" height="200px"></div>
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          {{{body}}}
+        </div>
+      </div>        
+
+      <div>
+        <footer class="footer">
+          <p>&copy; 2016 Madani Masjid, Inc.</p>
+          <div class="span4 pull-left">
+            {{!-- <div class="footer-image-container"><img src="/img/logo.jpg" width="200px" height="160px"></div> --}}
+          </div>
+
+      {{!--     <div>
+                <div class="span4 pull-right">
+                 <form class="form-inline" role="form">
+                   <div class="form-group">
+                      <h3>Please subscribe</h3>
+                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                      <input type="email" class="form-control transparent" placeholder="Enter your email">
+                      <button type="submit" class="btn btn-success btn-fill">Subscribe</button>
+                    </div>
+                  </form>
+                </div>
+          </div> --}}
+ {{!--          <div class="span4 pull-right">
+          <iframe src="http://free.timeanddate.com/clock/i5bqjqmj/n179/szw110/szh110/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/facfff/fnu2/fdi76/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3" frameborder="0" width="200" height="200"></iframe>
+          </div> --}}
+
+                      
+          {{!-- <div class="span4 pull-center">
+              <h3>Connect with us<h3>
+              <div class="social">
+                  <a href="https://www.facebook.com/Madani-Masjid-Inc-237840376313855/" target="_blank"><img src="/img/facebook.png" width="50px" height="50px" /></a>
+              </div> --}}
+          </div>
+        </footer>
+      </div>
+
+</div> <!-- /container -->
+</body>
+</html>
